@@ -1,0 +1,21 @@
+body {
+	font-family: helvetica;
+	font-size: 1em;
+}
+
+.userInput {
+	display : inline-block;
+	width: 30%;
+	vertical-align: top;
+}
+
+.textIn {
+	width : 300px;
+}
+
+#log {
+	width : 60%;
+	border : 1px solid grey;
+	text-align: center;
+}
+

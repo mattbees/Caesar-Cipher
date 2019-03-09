@@ -2,20 +2,42 @@
 <html>
 	<head>
 		<title>Caesar Cipher</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src = script.js></script>
 	</head>
 	<body>
-		<div>
-			<input id="inputNumber"></input>
+		<div class="userInput">
+			<p>Enter text you want to encrypt here:</p>
+			<input id="inputText" class="textIn"></input>
+			<div>
+				<button onclick="getText()">Encrypt</button>
+			</div>
+			<div>
+				<p id="outputText"></p>
+			</div>
+		</div>
+		<div class="userInput">
+			<p>Enter encrypted text here:</p>
+			<input id="inputEncrypted" class="textIn"></input>
+<!--update>			<div>
+				<button onclick="getEncrypted()">Encrypt</button>
+			</div>
+			<div>
+				<p id="outputDecrypted"></p>
+			</div> <-->
+		</div>
+		<div class="userInput">
+			<p>Enter the number of spaces to shift by here:</p>
+			<input type="number" min="1" max="25" value="1" id="inputNumber"></input>
 		</div>
 		<div>
-			<input id="inputText"></input>
-		</div>
-		<div>
-			<button onclick="getText()">Test</button>
-		</div>
-		<div>
-			<p id="outputText"></p>
+			<h3>Encryption log</h3>
+			<table id="log">
+				<tr>
+					<th>Encrypted text</th>
+					<th>Number for position shifting</th>
+				</tr>
+			</table>
 		</div>
 	</body>
 </html>
