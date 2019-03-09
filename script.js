@@ -231,7 +231,7 @@ function switchNum() {
 }
 
 function encrypt() {
-	var inputNum = parseInt(document.getElementById("inputNumber").value);
+	inputNum = parseInt(document.getElementById("inputNumber").value);
 	var output = [];
 	var x;
 	for (i=0; i<inputArr.length; i++) {
@@ -254,8 +254,13 @@ function encrypt() {
 }
 
 function writeOut(arg) {
+	var outArr = [];
 	document.getElementById("outputText").innerHTML = "";	
 	for (i=0; i<arg.length; i++) {
-		document.getElementById("outputText").innerHTML += arg[i];
+		outArr += arg[i];
 	}
+	outString = (outArr.toString()).replace(/,/g,"");
+	document.getElementById("outputText").innerHTML = outString;
+	document.getElementById("log").innerHTML 
+		+= "<tr><td>" + outString + "</td><td>" + inputNum + "</td></tr>";
 }
