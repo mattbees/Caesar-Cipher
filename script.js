@@ -1,4 +1,5 @@
 var alphabet = {
+	0 : " ",
 	1 : "a",
 	2 : "b",
 	3 : "c",
@@ -65,6 +66,9 @@ function getText() {
 function switchNum() {
 	for (i=0; i<inputArr.length; i++) {
 		switch(inputArr[i]) {
+			case " " :
+				inputArr[i] = 0;
+				break;
 			case "a" :
 				inputArr[i] = 1;
 				break;
@@ -236,6 +240,8 @@ function encrypt() {
 			if (x>52) {
 				x = x-26;
 			}
+		} else if (inputArr[i]<1) {
+			x=0;
 		} else {
 			x = inputArr[i]+inputNum;
 			if (x>26) {

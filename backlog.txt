@@ -1,3 +1,4 @@
 - Data entry validation for inputNumber: only enter nos between 1 and 26
 
 - Exception handling for inputNumber and inputText (try catch statements)
+- Add handling of punctuation
