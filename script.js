@@ -1,6 +1,36 @@
+var alphabet = {
+	1 : "a",
+	2 : "b",
+	3 : "c",
+	4 : "d",
+	5 : "e",
+	6 : "f",
+	7 : "g",
+	8 : "h",
+	9 : "i",
+	10 : "j",
+	11 : "k",
+	12 : "l",
+	13 : "m",
+	14 : "n",
+	15 : "o",
+	16 : "p",
+	17 : "q",
+	18 : "r",
+	19 : "s",
+	20 : "t",
+	21 : "u",
+	22 : "v",
+	23 : "w",
+	24 : "x",
+	25 : "y",
+	26 : "z"
+}
+
+
+
 
 function testFunc() {
-	var inputNum = document.getElementById("inputNumber").value;
 	var input = document.getElementById("inputText").value;
 	inputArr = input.split("");
 	document.getElementById("outputText").innerHTML = inputArr;
@@ -91,33 +121,14 @@ function newFunc() {
 		}
 	}
 	document.getElementById("outputText").innerHTML += inputArr;
+	encrypt();
 }
 
-var alphabet = {
-	1 : "a",
-	2 : "b",
-	3 : "c",
-	4 : "d",
-	5 : "e",
-	6 : "f",
-	7 : "g",
-	8 : "h",
-	9 : "i",
-	10 : "j",
-	11 : "k",
-	12 : "l",
-	13 : "m",
-	14 : "n",
-	15 : "o",
-	16 : "p",
-	17 : "q",
-	18 : "r",
-	19 : "s",
-	20 : "t",
-	21 : "u",
-	22 : "v",
-	23 : "w",
-	24 : "x",
-	25 : "y",
-	26 : "z"
+function encrypt() {
+	var inputNum = parseInt(document.getElementById("inputNumber").value);
+	var output = [];
+	for (i=0; i<inputArr.length; i++) {
+		output[i] = alphabet[(inputArr[i]+inputNum)]; 
+	}
+	document.getElementById("outputText").innerHTML += output;
 }
