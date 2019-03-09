@@ -56,14 +56,13 @@ var alphabet = {
 
 
 
-function testFunc() {
+function getText() {
 	var input = document.getElementById("inputText").value;
 	inputArr = input.split("");
-	document.getElementById("outputText").innerHTML = inputArr;
-	newFunc();
+	switchNum();
 }
 
-function newFunc() {
+function switchNum() {
 	for (i=0; i<inputArr.length; i++) {
 		switch(inputArr[i]) {
 			case "a" :
@@ -224,7 +223,6 @@ function newFunc() {
 				break;
 		}
 	}
-	document.getElementById("outputText").innerHTML += inputArr;
 	encrypt();
 }
 
@@ -246,11 +244,11 @@ function encrypt() {
 		}
 		output[i] = alphabet[x];
 	}
-	document.getElementById("outputText").innerHTML += output;
 	writeOut(output);
 }
 
 function writeOut(arg) {
+	document.getElementById("outputText").innerHTML = "";	
 	for (i=0; i<arg.length; i++) {
 		document.getElementById("outputText").innerHTML += arg[i];
 	}
