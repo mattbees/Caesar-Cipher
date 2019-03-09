@@ -24,7 +24,33 @@ var alphabet = {
 	23 : "w",
 	24 : "x",
 	25 : "y",
-	26 : "z"
+	26 : "z",
+	27 : "A",
+	28 : "B",
+	29 : "C",
+	30 : "D",
+	31 : "E",
+	32 : "F",
+	33 : "G",
+	34 : "H",
+	35 : "I",
+	36 : "J",
+	37 : "K",
+	38 : "L",
+	39 : "M",
+	40 : "N",
+	41 : "O",
+	42 : "P",
+	43 : "Q",
+	44 : "R",
+	45 : "S",
+	46 : "T",
+	47 : "U",
+	48 : "V",
+	49 : "W",
+	50 : "X",
+	51 : "Y",
+	52 : "Z"
 }
 
 
@@ -40,7 +66,7 @@ function testFunc() {
 function newFunc() {
 	for (i=0; i<inputArr.length; i++) {
 		switch(inputArr[i]) {
-			case "a":
+			case "a" :
 				inputArr[i] = 1;
 				break;
 			case "b":
@@ -118,6 +144,84 @@ function newFunc() {
 			case "z":
 				inputArr[i] = 26;
 				break;
+			case "A" :
+				inputArr[i] = 27;
+				break;
+			case "B":
+				inputArr[i] = 28;
+				break;
+			case "C":
+				inputArr[i] = 29;
+				break;
+			case "D":
+				inputArr[i] = 30;
+				break;
+			case "E":
+				inputArr[i] = 31;
+				break;
+			case "F":
+				inputArr[i] = 32;
+				break;
+			case "G":
+				inputArr[i] = 33;
+				break;
+			case "H":
+				inputArr[i] = 34;
+				break;
+			case "I":
+				inputArr[i] = 35;
+				break;
+			case "J":
+				inputArr[i] = 36;
+				break;
+			case "K":
+				inputArr[i] = 37;
+				break;
+			case "L":
+				inputArr[i] = 38;
+				break;
+			case "M":
+				inputArr[i] = 39;
+				break;
+			case "N":
+				inputArr[i] = 40;
+				break;
+			case "O":
+				inputArr[i] = 41;
+				break;
+			case "P":
+				inputArr[i] = 42;
+				break;
+			case "Q":
+				inputArr[i] = 43;
+				break;
+			case "R":
+				inputArr[i] = 44;
+				break;
+			case "S":
+				inputArr[i] = 45;
+				break;
+			case "T":
+				inputArr[i] = 46;
+				break;
+			case "U":
+				inputArr[i] = 47;
+				break;
+			case "V":
+				inputArr[i] = 48;
+				break;
+			case "W":
+				inputArr[i] = 49;
+				break;
+			case "X":
+				inputArr[i] = 50;
+				break;
+			case "Y":
+				inputArr[i] = 51;
+				break;
+			case "Z":
+				inputArr[i] = 52;
+				break;
 		}
 	}
 	document.getElementById("outputText").innerHTML += inputArr;
@@ -129,11 +233,25 @@ function encrypt() {
 	var output = [];
 	var x;
 	for (i=0; i<inputArr.length; i++) {
-		x = inputArr[i]+inputNum;
-		if (x>26) {
-			x = x-26;
+		if (inputArr[i]>26) {
+			x = inputArr[i]+inputNum;
+			if (x>52) {
+				x = x-26;
+			}
+		} else {
+			x = inputArr[i]+inputNum;
+			if (x>26) {
+				x = x-26;
+			}
 		}
 		output[i] = alphabet[x];
 	}
 	document.getElementById("outputText").innerHTML += output;
+	writeOut(output);
+}
+
+function writeOut(arg) {
+	for (i=0; i<arg.length; i++) {
+		document.getElementById("outputText").innerHTML += arg[i];
+	}
 }
