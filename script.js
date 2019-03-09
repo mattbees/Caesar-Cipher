@@ -127,8 +127,13 @@ function newFunc() {
 function encrypt() {
 	var inputNum = parseInt(document.getElementById("inputNumber").value);
 	var output = [];
+	var x;
 	for (i=0; i<inputArr.length; i++) {
-		output[i] = alphabet[(inputArr[i]+inputNum)]; 
+		x = inputArr[i]+inputNum;
+		if (x>26) {
+			x = x-26;
+		}
+		output[i] = alphabet[x];
 	}
 	document.getElementById("outputText").innerHTML += output;
 }
