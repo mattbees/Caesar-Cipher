@@ -1,6 +1,8 @@
 body {
 	font-family: helvetica;
 	font-size: 1em;
+	border-top: 2px solid black;
+	margin-top: 0;
 }
 
 .userInput {

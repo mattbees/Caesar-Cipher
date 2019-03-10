@@ -54,213 +54,424 @@ var alphabet = {
 	52 : "Z"
 }
 
+// ENCRYPTION CODE:
 
-
-
-function getText() {
-	var input = document.getElementById("inputText").value;
-	inputArr = input.split("");
-	switchNum();
-}
-
-function switchNum() {
-	for (i=0; i<inputArr.length; i++) {
-		switch(inputArr[i]) {
-			case " " :
-				inputArr[i] = 0;
-				break;
-			case "a" :
-				inputArr[i] = 1;
-				break;
-			case "b":
-				inputArr[i] = 2;
-				break;
-			case "c":
-				inputArr[i] = 3;
-				break;
-			case "d":
-				inputArr[i] = 4;
-				break;
-			case "e":
-				inputArr[i] = 5;
-				break;
-			case "f":
-				inputArr[i] = 6;
-				break;
-			case "g":
-				inputArr[i] = 7;
-				break;
-			case "h":
-				inputArr[i] = 8;
-				break;
-			case "i":
-				inputArr[i] = 9;
-				break;
-			case "j":
-				inputArr[i] = 10;
-				break;
-			case "k":
-				inputArr[i] = 11;
-				break;
-			case "l":
-				inputArr[i] = 12;
-				break;
-			case "m":
-				inputArr[i] = 13;
-				break;
-			case "n":
-				inputArr[i] = 14;
-				break;
-			case "o":
-				inputArr[i] = 15;
-				break;
-			case "p":
-				inputArr[i] = 16;
-				break;
-			case "q":
-				inputArr[i] = 17;
-				break;
-			case "r":
-				inputArr[i] = 18;
-				break;
-			case "s":
-				inputArr[i] = 19;
-				break;
-			case "t":
-				inputArr[i] = 20;
-				break;
-			case "u":
-				inputArr[i] = 21;
-				break;
-			case "v":
-				inputArr[i] = 22;
-				break;
-			case "w":
-				inputArr[i] = 23;
-				break;
-			case "x":
-				inputArr[i] = 24;
-				break;
-			case "y":
-				inputArr[i] = 25;
-				break;
-			case "z":
-				inputArr[i] = 26;
-				break;
-			case "A" :
-				inputArr[i] = 27;
-				break;
-			case "B":
-				inputArr[i] = 28;
-				break;
-			case "C":
-				inputArr[i] = 29;
-				break;
-			case "D":
-				inputArr[i] = 30;
-				break;
-			case "E":
-				inputArr[i] = 31;
-				break;
-			case "F":
-				inputArr[i] = 32;
-				break;
-			case "G":
-				inputArr[i] = 33;
-				break;
-			case "H":
-				inputArr[i] = 34;
-				break;
-			case "I":
-				inputArr[i] = 35;
-				break;
-			case "J":
-				inputArr[i] = 36;
-				break;
-			case "K":
-				inputArr[i] = 37;
-				break;
-			case "L":
-				inputArr[i] = 38;
-				break;
-			case "M":
-				inputArr[i] = 39;
-				break;
-			case "N":
-				inputArr[i] = 40;
-				break;
-			case "O":
-				inputArr[i] = 41;
-				break;
-			case "P":
-				inputArr[i] = 42;
-				break;
-			case "Q":
-				inputArr[i] = 43;
-				break;
-			case "R":
-				inputArr[i] = 44;
-				break;
-			case "S":
-				inputArr[i] = 45;
-				break;
-			case "T":
-				inputArr[i] = 46;
-				break;
-			case "U":
-				inputArr[i] = 47;
-				break;
-			case "V":
-				inputArr[i] = 48;
-				break;
-			case "W":
-				inputArr[i] = 49;
-				break;
-			case "X":
-				inputArr[i] = 50;
-				break;
-			case "Y":
-				inputArr[i] = 51;
-				break;
-			case "Z":
-				inputArr[i] = 52;
-				break;
-		}
+	// getText() gets the user input and converts it into an array of characters
+	function getText() {
+		var input = document.getElementById("inputText").value;
+		inputArr = input.split("");
+		switchNum();
 	}
-	encrypt();
-}
 
-function encrypt() {
-	inputNum = parseInt(document.getElementById("inputNumber").value);
-	var output = [];
-	var x;
-	for (i=0; i<inputArr.length; i++) {
-		if (inputArr[i]>26) {
-			x = inputArr[i]+inputNum;
-			if (x>52) {
-				x = x-26;
-			}
-		} else if (inputArr[i]<1) {
-			x=0;
-		} else {
-			x = inputArr[i]+inputNum;
-			if (x>26) {
-				x = x-26;
+	// switchNum() converts the array of chars into an array of corresponding numbers
+	function switchNum() {
+		for (i=0; i<inputArr.length; i++) {
+			switch(inputArr[i]) {
+				case " " :
+					inputArr[i] = 0;
+					break;
+				case "a" :
+					inputArr[i] = 1;
+					break;
+				case "b":
+					inputArr[i] = 2;
+					break;
+				case "c":
+					inputArr[i] = 3;
+					break;
+				case "d":
+					inputArr[i] = 4;
+					break;
+				case "e":
+					inputArr[i] = 5;
+					break;
+				case "f":
+					inputArr[i] = 6;
+					break;
+				case "g":
+					inputArr[i] = 7;
+					break;
+				case "h":
+					inputArr[i] = 8;
+					break;
+				case "i":
+					inputArr[i] = 9;
+					break;
+				case "j":
+					inputArr[i] = 10;
+					break;
+				case "k":
+					inputArr[i] = 11;
+					break;
+				case "l":
+					inputArr[i] = 12;
+					break;
+				case "m":
+					inputArr[i] = 13;
+					break;
+				case "n":
+					inputArr[i] = 14;
+					break;
+				case "o":
+					inputArr[i] = 15;
+					break;
+				case "p":
+					inputArr[i] = 16;
+					break;
+				case "q":
+					inputArr[i] = 17;
+					break;
+				case "r":
+					inputArr[i] = 18;
+					break;
+				case "s":
+					inputArr[i] = 19;
+					break;
+				case "t":
+					inputArr[i] = 20;
+					break;
+				case "u":
+					inputArr[i] = 21;
+					break;
+				case "v":
+					inputArr[i] = 22;
+					break;
+				case "w":
+					inputArr[i] = 23;
+					break;
+				case "x":
+					inputArr[i] = 24;
+					break;
+				case "y":
+					inputArr[i] = 25;
+					break;
+				case "z":
+					inputArr[i] = 26;
+					break;
+				case "A" :
+					inputArr[i] = 27;
+					break;
+				case "B":
+					inputArr[i] = 28;
+					break;
+				case "C":
+					inputArr[i] = 29;
+					break;
+				case "D":
+					inputArr[i] = 30;
+					break;
+				case "E":
+					inputArr[i] = 31;
+					break;
+				case "F":
+					inputArr[i] = 32;
+					break;
+				case "G":
+					inputArr[i] = 33;
+					break;
+				case "H":
+					inputArr[i] = 34;
+					break;
+				case "I":
+					inputArr[i] = 35;
+					break;
+				case "J":
+					inputArr[i] = 36;
+					break;
+				case "K":
+					inputArr[i] = 37;
+					break;
+				case "L":
+					inputArr[i] = 38;
+					break;
+				case "M":
+					inputArr[i] = 39;
+					break;
+				case "N":
+					inputArr[i] = 40;
+					break;
+				case "O":
+					inputArr[i] = 41;
+					break;
+				case "P":
+					inputArr[i] = 42;
+					break;
+				case "Q":
+					inputArr[i] = 43;
+					break;
+				case "R":
+					inputArr[i] = 44;
+					break;
+				case "S":
+					inputArr[i] = 45;
+					break;
+				case "T":
+					inputArr[i] = 46;
+					break;
+				case "U":
+					inputArr[i] = 47;
+					break;
+				case "V":
+					inputArr[i] = 48;
+					break;
+				case "W":
+					inputArr[i] = 49;
+					break;
+				case "X":
+					inputArr[i] = 50;
+					break;
+				case "Y":
+					inputArr[i] = 51;
+					break;
+				case "Z":
+					inputArr[i] = 52;
+					break;
 			}
 		}
-		output[i] = alphabet[x];
+		encrypt();
 	}
-	writeOut(output);
-}
 
-function writeOut(arg) {
-	var outArr = [];
-	document.getElementById("outputText").innerHTML = "";	
-	for (i=0; i<arg.length; i++) {
-		outArr += arg[i];
+	// encrypt() adds inputNum to each element of the array and adds the corresponding char to output[]
+	function encrypt() {
+		inputNum = parseInt(document.getElementById("inputNumber").value);
+		var output = [];
+		var x;
+		for (i=0; i<inputArr.length; i++) {
+			if (inputArr[i]>26) {
+				x = inputArr[i]+inputNum;
+				if (x>52) {
+					x = x-26;
+				}
+			} else if (inputArr[i]<1) {
+				x=0;
+			} else {
+				x = inputArr[i]+inputNum;
+				if (x>26) {
+					x = x-26;
+				}
+			}
+			output[i] = alphabet[x];
+		}
+		writeOut(output);
 	}
-	outString = (outArr.toString()).replace(/,/g,"");
-	document.getElementById("outputText").innerHTML = outString;
-	document.getElementById("log").innerHTML 
-		+= "<tr><td>" + outString + "</td><td>" + inputNum + "</td></tr>";
-}
+
+	// writeOut() outputs the encrypted text and adds it to the encryption log
+	function writeOut(arg) {
+		var outArr = [];
+		document.getElementById("outputText").innerHTML = "";	
+		for (i=0; i<arg.length; i++) {
+			outArr += arg[i];
+		}
+		outString = (outArr.toString()).replace(/,/g,""); // RegExp (g flag performs global search)
+		document.getElementById("outputText").innerHTML = outString;
+		document.getElementById("log").innerHTML 
+			+= "<tr><td>" + outString + "</td><td>" + inputNum + "</td></tr>";
+	}
+
+/* DECRYPTION CODE (This parallels the above code to avoid separate user clicks for entering text 
+*  then selecting encrypt/decrypt. Clunky, but seems the best solution for the user!) */
+
+	// getEncrypted gets the encrypted text from the user
+	function getEncrypted() {
+		var input = document.getElementById("inputEncrypted").value;
+		inputArr = input.split("");
+		switchNum2();
+	}
+
+	// switchNum2() converts the array of chars into an array of corresponding numbers
+	function switchNum2() {
+		for (i=0; i<inputArr.length; i++) {
+			switch(inputArr[i]) {
+				case " " :
+					inputArr[i] = 0;
+					break;
+				case "a" :
+					inputArr[i] = 1;
+					break;
+				case "b":
+					inputArr[i] = 2;
+					break;
+				case "c":
+					inputArr[i] = 3;
+					break;
+				case "d":
+					inputArr[i] = 4;
+					break;
+				case "e":
+					inputArr[i] = 5;
+					break;
+				case "f":
+					inputArr[i] = 6;
+					break;
+				case "g":
+					inputArr[i] = 7;
+					break;
+				case "h":
+					inputArr[i] = 8;
+					break;
+				case "i":
+					inputArr[i] = 9;
+					break;
+				case "j":
+					inputArr[i] = 10;
+					break;
+				case "k":
+					inputArr[i] = 11;
+					break;
+				case "l":
+					inputArr[i] = 12;
+					break;
+				case "m":
+					inputArr[i] = 13;
+					break;
+				case "n":
+					inputArr[i] = 14;
+					break;
+				case "o":
+					inputArr[i] = 15;
+					break;
+				case "p":
+					inputArr[i] = 16;
+					break;
+				case "q":
+					inputArr[i] = 17;
+					break;
+				case "r":
+					inputArr[i] = 18;
+					break;
+				case "s":
+					inputArr[i] = 19;
+					break;
+				case "t":
+					inputArr[i] = 20;
+					break;
+				case "u":
+					inputArr[i] = 21;
+					break;
+				case "v":
+					inputArr[i] = 22;
+					break;
+				case "w":
+					inputArr[i] = 23;
+					break;
+				case "x":
+					inputArr[i] = 24;
+					break;
+				case "y":
+					inputArr[i] = 25;
+					break;
+				case "z":
+					inputArr[i] = 26;
+					break;
+				case "A" :
+					inputArr[i] = 27;
+					break;
+				case "B":
+					inputArr[i] = 28;
+					break;
+				case "C":
+					inputArr[i] = 29;
+					break;
+				case "D":
+					inputArr[i] = 30;
+					break;
+				case "E":
+					inputArr[i] = 31;
+					break;
+				case "F":
+					inputArr[i] = 32;
+					break;
+				case "G":
+					inputArr[i] = 33;
+					break;
+				case "H":
+					inputArr[i] = 34;
+					break;
+				case "I":
+					inputArr[i] = 35;
+					break;
+				case "J":
+					inputArr[i] = 36;
+					break;
+				case "K":
+					inputArr[i] = 37;
+					break;
+				case "L":
+					inputArr[i] = 38;
+					break;
+				case "M":
+					inputArr[i] = 39;
+					break;
+				case "N":
+					inputArr[i] = 40;
+					break;
+				case "O":
+					inputArr[i] = 41;
+					break;
+				case "P":
+					inputArr[i] = 42;
+					break;
+				case "Q":
+					inputArr[i] = 43;
+					break;
+				case "R":
+					inputArr[i] = 44;
+					break;
+				case "S":
+					inputArr[i] = 45;
+					break;
+				case "T":
+					inputArr[i] = 46;
+					break;
+				case "U":
+					inputArr[i] = 47;
+					break;
+				case "V":
+					inputArr[i] = 48;
+					break;
+				case "W":
+					inputArr[i] = 49;
+					break;
+				case "X":
+					inputArr[i] = 50;
+					break;
+				case "Y":
+					inputArr[i] = 51;
+					break;
+				case "Z":
+					inputArr[i] = 52;
+					break;
+			}
+		}
+		decrypt();
+	}
+
+	// decrypt() adds inputNum to each element of the array and adds the corresponding char to output[]
+	function decrypt() {
+		inputNum = parseInt(document.getElementById("inputNumber").value);
+		var output = [];
+		var x;
+		for (i=0; i<inputArr.length; i++) {
+			x = inputArr[i]-inputNum;
+			if (inputArr[i]<1) {
+				x=0;
+			} else if (x<1) {
+				x = x+26;
+			} else if (inputArr[i]>26) {
+				if (x<27) {
+					x = x+26;
+				}
+			}
+			output[i] = alphabet[x];
+		}
+		writeOut2(output);
+	}
+
+	// writeOut2() outputs the decrypted text
+	function writeOut2(arg) {
+		var outArr = [];
+		document.getElementById("outputDecrypted").innerHTML = "";	
+		for (i=0; i<arg.length; i++) {
+			document.getElementById("outputDecrypted").innerHTML += arg[i];
+		}
+	}
